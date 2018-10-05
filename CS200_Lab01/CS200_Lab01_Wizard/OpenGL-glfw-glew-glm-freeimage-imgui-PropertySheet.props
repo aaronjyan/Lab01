@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\imgui-master;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\glm-0.9.9.0;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\glfw-3.2.1.bin.WIN32\include;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\glew-2.0.0\include;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\FreeImage\Dist\x32;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\FreeImage\Dist\x32;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\glew-2.0.0\lib\Release\Win32;D:\Users\Desktop\personalSVN\2018\Fall\CS200\Assignments\Lab-1\CS200_Lab01\lib\glfw-3.2.1.bin.WIN32\lib-vc2015;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>GLFW_DLL;CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3dll.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)lib\glfw-3.2.1.bin.WIN32\lib-vc2015\glfw3.dll" "$(TargetDir)glfw3.dll" /Y
+copy "$(SolutionDir)lib\glew-2.0.0\bin\Release\Win32\glew32.dll" "$(TargetDir)glew32.dll" /Y
+copy "$(SolutionDir)lib\FreeImage\Dist\x32\FreeImage.dll" "$(TargetDir)FreeImage.dll" /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
